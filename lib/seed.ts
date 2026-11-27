@@ -164,7 +164,7 @@ export const seedCultures: Culture[] = [
     name: "Adire Textile",
     detail_desc:
       "Yoruba resist-dyeing from Nigeria, where cloth is tied, stitched, or painted with cassava paste before indigo dyeing to reveal intricate blue-and-white patterns.",
-    media_url: img("adire-textile"),
+    media_url: "/images/cultures/adire-textile.jpg",
     audio_narration_url: "",
     sign_language_gif_url: "",
   },
@@ -175,7 +175,7 @@ export const seedCultures: Culture[] = [
     name: "Yoruba",
     detail_desc:
       "A tonal language spoken by over 40 million people. Pitch changes meaning entirely, and its rich oral literature carries proverbs, poetry, and history across generations.",
-    media_url: img("yoruba-language"),
+    media_url: "/images/cultures/yoruba.jpg",
     audio_narration_url: "",
     sign_language_gif_url: "",
   },
@@ -185,6 +185,10 @@ export const seedCultures: Culture[] = [
 const CUSTOM_ALT_TEXT: Record<string, string> = {
   "20000000-0000-4000-8000-000000000008":
     "A Bharatanatyam dancer in a vivid red costume performing a raised-hand gesture and lifted-leg pose under warm stage lighting against a dark temple backdrop.",
+  "20000000-0000-4000-8000-000000000009":
+    "A woman wearing a warm orange and cream patterned Adire textile with a sheer white lace headwrap, smiling outdoors in soft daylight.",
+  "20000000-0000-4000-8000-000000000010":
+    "A group of people in teal striped traditional Yoruba attire with matching fila caps and coral bead necklaces gathered at an outdoor celebration.",
 };
 
 export const seedAccessibility: AccessibilityMeta[] = seedCultures.map(
