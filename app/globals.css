@@ -1,0 +1,249 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light — warm stone monochrome, one terracotta accent. */
+    --background: 60 9% 98%;
+    --foreground: 24 10% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 24 10% 10%;
+
+    --primary: 24 10% 10%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 60 5% 96%;
+    --secondary-foreground: 24 10% 10%;
+
+    --muted: 60 5% 96%;
+    --muted-foreground: 33 5% 32%;
+
+    --accent: 15 79% 34%;
+    --accent-hover: 15 75% 28%;
+    --accent-dark: 32 95% 44%;
+    --accent-dark-hover: 26 90% 37%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 15 79% 34%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 144 61% 20%;
+    --success-foreground: 0 0% 100%;
+
+    --border: 20 6% 90%;
+    --input: 20 6% 90%;
+    --ring: 24 10% 10%;
+
+    --radius: 0.25rem;
+  }
+
+  /* Dark — a premium gallery at night. */
+  .dark {
+    --background: 20 14% 4%;
+    --foreground: 60 9% 98%;
+
+    --card: 24 10% 10%;
+    --card-foreground: 60 9% 98%;
+
+    --primary: 60 9% 98%;
+    --primary-foreground: 20 14% 4%;
+
+    --secondary: 12 6% 15%;
+    --secondary-foreground: 60 9% 98%;
+
+    --muted: 12 6% 15%;
+    --muted-foreground: 24 5% 64%;
+
+    --accent: 32 95% 44%;
+    --accent-hover: 26 90% 37%;
+    --accent-dark: 32 95% 44%;
+    --accent-dark-hover: 26 90% 37%;
+    --accent-foreground: 20 14% 4%;
+
+    --destructive: 32 95% 44%;
+    --destructive-foreground: 20 14% 4%;
+
+    --success: 144 61% 45%;
+    --success-foreground: 20 14% 4%;
+
+    --border: 12 6% 15%;
+    --input: 12 6% 15%;
+    --ring: 24 6% 83%;
+  }
+
+  /* High contrast — pure black/white with a soft blue accent. */
+  .hc,
+  .high-contrast {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 100%;
+
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 100%;
+
+    --accent: 213 94% 68%;
+    --accent-hover: 213 94% 60%;
+    --accent-dark: 213 94% 68%;
+    --accent-dark-hover: 213 94% 60%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 213 94% 68%;
+    --destructive-foreground: 0 0% 0%;
+
+    --success: 213 94% 68%;
+    --success-foreground: 0 0% 0%;
+
+    --border: 0 0% 100%;
+    --input: 0 0% 100%;
+    --ring: 213 94% 68%;
+  }
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    @apply border-border;
+    transition-property: background-color, border-color, color;
+    transition-duration: 300ms;
+    transition-timing-function: ease;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    text-rendering: optimizeLegibility;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-1 ring-ring ring-offset-2 ring-offset-background;
+  }
+
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-sm focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer components {
+  .editorial-hero {
+    min-height: calc(100vh - 4rem);
+    min-height: calc(100svh - 4rem);
+  }
+
+  .editorial-label {
+    @apply text-xs font-medium uppercase tracking-widest text-muted-foreground;
+  }
+
+  .scroll-indicator {
+    animation: scroll-indicator 2.4s ease-in-out infinite;
+  }
+}
+
+@keyframes scroll-indicator {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+/* Hero controls sit on photography, so they use a contrast-safe outline. */
+.hero-focus:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+.dark .hero-focus:focus-visible {
+  outline-color: #d6d3d1;
+}
+
+.hc .hero-focus:focus-visible,
+.high-contrast .hero-focus:focus-visible {
+  outline-color: hsl(var(--accent));
+}
+
+/* High contrast keeps the photograph visible — only the palette inverts. */
+.hc .hero-section,
+.high-contrast .hero-section,
+.hc .page-shell,
+.high-contrast .page-shell {
+  background: #000000;
+}
+
+.hc .hero-section h1,
+.hc .hero-section p,
+.hc .hero-section a,
+.high-contrast .hero-section h1,
+.high-contrast .hero-section p,
+.high-contrast .hero-section a {
+  color: #ffffff;
+}
+
+.hc .hero-section .hero-cta,
+.high-contrast .hero-section .hero-cta {
+  border-color: hsl(var(--accent));
+  color: hsl(var(--accent));
+}
+
+.hc .hero-section .hero-cta:hover,
+.high-contrast .hero-section .hero-cta:hover {
+  background: hsl(var(--accent));
+  color: #000000;
+}
+
+.hc .back-button,
+.high-contrast .back-button {
+  background: #000000;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.hc .back-button:hover,
+.high-contrast .back-button:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-indicator {
+    animation: none;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
