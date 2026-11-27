@@ -87,7 +87,7 @@ export const seedCultures: Culture[] = [
     name: "Rendang",
     detail_desc:
       "A slow-cooked Minangkabau masterpiece of beef simmered for hours in coconut milk and a complex spice paste until the sauce caramelizes into a rich, dry coating.",
-    media_url: img("rendang"),
+    media_url: "/images/cultures/rendang.jpg",
     audio_narration_url: "",
     sign_language_gif_url: "",
   },
@@ -98,7 +98,7 @@ export const seedCultures: Culture[] = [
     name: "Ikebana",
     detail_desc:
       "The Japanese art of flower arranging, emphasizing line, balance, and negative space. Each stem, leaf, and bloom is placed to express harmony between nature and humanity.",
-    media_url: img("ikebana"),
+    media_url: "/images/cultures/ikebana.jpg",
     audio_narration_url: "",
     sign_language_gif_url: "",
   },
@@ -120,7 +120,7 @@ export const seedCultures: Culture[] = [
     name: "Jarabe Tapatío",
     detail_desc:
       "Mexico's national dance, often called the 'Mexican Hat Dance.' Couples circle with precise footwork around a sombrero in a courtship story told through movement.",
-    media_url: img("jarabe-tapatios"),
+    media_url: "/images/cultures/jarabe-tapatios.jpg",
     audio_narration_url: "",
     sign_language_gif_url: "",
   },
@@ -189,6 +189,12 @@ const CUSTOM_ALT_TEXT: Record<string, string> = {
     "A woman wearing a warm orange and cream patterned Adire textile with a sheer white lace headwrap, smiling outdoors in soft daylight.",
   "20000000-0000-4000-8000-000000000010":
     "A group of people in teal striped traditional Yoruba attire with matching fila caps and coral bead necklaces gathered at an outdoor celebration.",
+  "20000000-0000-4000-8000-000000000002":
+    "A close-up of dark, caramelized beef rendang coated in a rich spice paste on a white ceramic plate.",
+  "20000000-0000-4000-8000-000000000003":
+    "A minimalist ikebana arrangement of slender branches in a tall glass vase, casting delicate shadows on a warm wall beneath a framed calligraphy panel.",
+  "20000000-0000-4000-8000-000000000005":
+    "A Mexican rider in an embroidered navy dress and wide-brimmed sombrero sitting atop a tan horse against a soft blue sky.",
 };
 
 export const seedAccessibility: AccessibilityMeta[] = seedCultures.map(

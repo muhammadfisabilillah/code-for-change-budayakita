@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ChevronLeft, ChevronRight, Globe2 } from "lucide-react";
-import { CultureCard } from "@/components/culture-card";
+import { CultureCard } from "@/components/ui/CultureCard";
 import { CultureTypeBadge } from "@/components/culture-type";
 import { getCountryById, getCulturesByCountry } from "@/lib/data";
 import type { CultureType } from "@/lib/types";
@@ -155,7 +155,17 @@ export default async function CountryDetailPage({ params }: PageProps) {
           <ul className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {cultures.map((culture) => (
               <li key={culture.id} className="h-full">
-                <CultureCard culture={culture} />
+                <CultureCard
+                  category={`${culture.country?.name ?? country.name} • ${culture.type}`}
+                  title={culture.name}
+                  image={culture.media_url}
+                  alt={
+                    culture.accessibility?.alt_text?.trim() ||
+                    `${culture.name} — ${culture.type} from ${country.name}.`
+                  }
+                  description={culture.detail_desc}
+                  href={`/cultures/${culture.id}`}
+                />
               </li>
             ))}
           </ul>

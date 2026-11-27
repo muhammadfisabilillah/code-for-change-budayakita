@@ -7,6 +7,8 @@ interface CultureCardProps {
   image: string;
   /** Describes the actual photograph for screen-reader users. */
   alt: string;
+  /** Optional short explanation shown under the title. */
+  description?: string;
   href?: string;
 }
 
@@ -16,6 +18,7 @@ export function CultureCard({
   title,
   image,
   alt,
+  description,
   href = "/cultures",
 }: CultureCardProps) {
   return (
@@ -42,6 +45,11 @@ export function CultureCard({
           {category}
         </p>
         <h3 className="text-xl font-normal text-white">{title}</h3>
+        {description && (
+          <p className="mt-2 line-clamp-3 text-xs leading-relaxed text-stone-200/90">
+            {description}
+          </p>
+        )}
       </div>
 
       <Link
