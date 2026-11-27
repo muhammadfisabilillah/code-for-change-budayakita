@@ -7,7 +7,7 @@ import {
   Eye,
   Volume2,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { AudioPlayer } from "@/components/ui/AudioPlayer";
 import { CultureCard } from "@/components/ui/CultureCard";
 import { Reveal } from "@/components/reveal";
 
@@ -31,10 +31,9 @@ const cultureDetails: CultureDetail[] = [
     slug: "borobudur",
     category: "Indonesia • Architecture",
     title: "Candi Borobudur",
-    heroImage:
-      "https://images.unsplash.com/photo-1596401057633-54c8c1b61397?q=80&w=1600&auto=format&fit=crop",
-    photoCredit: "Photo by Arun Mathias on Unsplash",
-    photoCreditUrl: "https://unsplash.com",
+    heroImage: "/images/cultures/borobudur.jpg",
+    photoCredit: "Photo · BudayaKita Global collection",
+    photoCreditUrl: "",
     intro:
       "Bangun di atas bukit hijau Magelang, Borobudur bukan sekadar candi — ia adalah mandala raksasa yang mengajak pejalan kaki untuk naik menuju pencerahan, tingkat demi tingkat.",
     body: [
@@ -43,7 +42,7 @@ const cultureDetails: CultureDetail[] = [
       "Upaya konservasi berkelanjutan menjaga agar relief-reliefnya tetap dapat dibaca oleh generasi mendatang. Di balik setiap ukiran, ada cerita tentang perjalanan spiritual, kerja keras para perajin, dan keyakinan yang diwariskan lintas abad.",
     ],
     altText:
-      "Pemandangan udara Candi Borobudur saat matahari terbit, dengan stupa-stupa batu andesit berbentuk lonceng yang dikelilingi kabut tipis dan perbukitan hijau di latar belakang. Langit berwarna gradasi jingga keunguan.",
+      "A seated Buddha statue inside a perforated stone stupa at Borobudur, with several bell-shaped stupas and visitors in the background under a bright, hazy sky.",
     transcript:
       "Narasi: Candi Borobudur berdiri megah di tengah keheningan pagi. Relief-relief batu menceritakan perjalanan spiritual Siddhartha Gautama, sementara stupa-stupa berongga menampung arca Buddha yang sedang bermeditasi. Dari kaki candi, langkah demi langkah membawa pengunjung naik melalui tingkatan dunia keinginan, dunia bentuk, hingga dunia tanpa bentuk. Di puncaknya, sebuah stupa utama menandai titik pencerahan.",
     audioUrl: "",
@@ -93,10 +92,9 @@ const cultureDetails: CultureDetail[] = [
     slug: "kyoto-tea-ceremony",
     category: "Jepang • Tradition",
     title: "Upacara Teh Kyoto",
-    heroImage:
-      "https://images.unsplash.com/photo-1528360983277-13d9b152c6d1?q=80&w=1600&auto=format&fit=crop",
-    photoCredit: "Illustrative photograph · BudayaKita Global",
-    photoCreditUrl: "https://unsplash.com",
+    heroImage: "/images/cultures/upacara-teh-tokyo-detail.jpg",
+    photoCredit: "Photo · BudayaKita Global collection",
+    photoCreditUrl: "",
     intro:
       "Dalam ruang teh Kyoto, setiap gerakan diukur oleh keheningan. Seduhannya sederhana, tetapi perhatian yang menyertainya menjadi inti dari upacara ini.",
     body: [
@@ -104,7 +102,7 @@ const cultureDetails: CultureDetail[] = [
       "Setiap peralatan dipilih sesuai musim, dan urutan gerakannya mengikuti pola yang telah diwariskan selama berabad-abad. Yang dihadirkan bukan sekadar minuman, melainkan sebuah ruang untuk hadir sepenuhnya.",
     ],
     altText:
-      "Suasana ruang teh Kyoto dengan mangkuk teh keramik dan alat seduh bambu yang ditata rapi di atas meja kayu rendah.",
+      "A woman in an orange floral kimono kneeling on a tatami mat in a shoji-screened tea room, with a black cast-iron kettle, bamboo whisk, and a red teacup arranged on a woven tray beside her.",
     transcript:
       "Narasi: Air mendidih perlahan dalam ketel besi. Bambu whisk dikumpulkan dengan gerakan lembut, lalu teh hijau dikocok hingga berbusa halus. Mangkuk teh diputar sedikit sebelum diminum, sebagai tanda penghargaan terhadap bentuknya dan terhadap orang yang menyajikannya.",
     audioUrl: "",
@@ -114,10 +112,9 @@ const cultureDetails: CultureDetail[] = [
     slug: "giza-pyramids",
     category: "Mesir • History",
     title: "Piramida Giza",
-    heroImage:
-      "https://images.unsplash.com/photo-1539650116574-75c0c6d73e6e?q=80&w=1600&auto=format&fit=crop",
-    photoCredit: "Illustrative photograph · BudayaKita Global",
-    photoCreditUrl: "https://unsplash.com",
+    heroImage: "/images/cultures/piramida-giza.jpg",
+    photoCredit: "Photo · BudayaKita Global collection",
+    photoCreditUrl: "",
     intro:
       "Di tepi gurun, piramida Giza berdiri sebagai jejak ambisi manusia yang menantang waktu — tiga monumen yang masih menyimpan pertanyaan hingga hari ini.",
     body: [
@@ -125,11 +122,32 @@ const cultureDetails: CultureDetail[] = [
       "Presisi konstruksinya masih menjadi subjek kajian: blok-blok batu kapur diatur sedemikian rupa sehingga sudut dan orientasinya selaras dengan langit malam. Hingga kini, situs ini tetap menjadi pengingat akan kemampuan teknik dan organisasi kerja masa lampau.",
     ],
     altText:
-      "Tiga piramida Giza menjulang di atas pasir gurun dengan langit cerah di latar belakang dan bayangan yang panjang di permukaan pasir.",
+      "A camel resting on pale rocky sand in front of a great pyramid under a deep blue sky.",
     transcript:
       "Narasi: Piramida Agung Giza menjulang di atas dataran gurun. Permukaannya terdiri dari ribuan blok batu yang tersusun dengan presisi tinggi. Di kejauhan, dua piramida lainnya melengkapi kompleks ini, menciptakan lanskap yang telah dikenali manusia selama ribuan tahun.",
     audioUrl: "",
     relatedSlugs: ["kyoto-tea-ceremony", "borobudur"],
+  },
+  {
+    slug: "bharatanatyam",
+    category: "India • Dance",
+    title: "Bharatanatyam",
+    heroImage: "/images/cultures/bharatanatyam.jpg",
+    photoCredit: "Photo · BudayaKita Global collection",
+    photoCreditUrl: "",
+    intro:
+      "Satu tubuh bisa menjadi seluruh cerita. Dalam Bharatanatyam, gerak kecil jari menyimpan makna, dan setiap pijakan mengubah lantai menjadi panggung penghayatan.",
+    body: [
+      "Bharatanatyam adalah bentuk tari klasik tertua dari Tamil Nadu, India Selatan. Akarnya dapat ditelusuri lebih dari dua ribu tahun lalu, ketika tarian ini dipersembahkan di kuil sebagai bagian dari ibadah.",
+      "Tari ini dikenal karena kombinasi mudra — gesture tangan yang sarat makna — serta ekspresi wajah dan irama kaki yang presisi. Penari menguasai keseimbangan antara bhava (perasaan), raga (keindahan), dan tala (ritme).",
+      "Kostum merah dengan perhiasan emas, rambut yang dihias, dan pencahayaan hangat sering menjadi ciri khas pertunjukannya. Di balik keindahan visual itu, ada latihan bertahun-tahun untuk menjaga setiap gerak tetap tajam dan penuh arti.",
+    ],
+    altText:
+      "A Bharatanatyam dancer in a vivid red costume performing a raised-hand gesture and lifted-leg pose under warm stage lighting against a dark temple backdrop.",
+    transcript:
+      "Narasi: Seorang penari Bharatanatyam berdiri dalam pencahayaan hangat di atas panggung gelap. Tangannya membentuk mudra, satu telapak menghadap ke depan sementara kaki kirinya terangkat dalam keseimbangan yang mantap. Gerak kecil jari menceritakan makna yang lebih besar daripada kata, sementara irama kaki menandai setiap pergantian fase dalam tarian.",
+    audioUrl: "",
+    relatedSlugs: ["borobudur", "pendet-dance"],
   },
 ];
 
@@ -240,6 +258,17 @@ export default function CultureDetailPage({
                 </div>
               </div>
 
+              <div>
+                <p className="mb-3 text-xs font-medium uppercase tracking-widest text-stone-500 dark:text-stone-400">
+                  Audio narration
+                </p>
+                <AudioPlayer
+                  text={culture.transcript}
+                  lang="id-ID"
+                  rate={0.9}
+                />
+              </div>
+
               <div className="flex gap-4">
                 <Volume2
                   className="mt-0.5 size-5 shrink-0 text-stone-400"
@@ -249,13 +278,6 @@ export default function CultureDetailPage({
                   <h3 className="mb-2 text-sm font-medium text-stone-900 dark:text-stone-100">
                     Narration transcript
                   </h3>
-                  {culture.audioUrl && (
-                    <Button asChild variant="outline" className="mb-4 rounded-sm">
-                      <a href={culture.audioUrl} aria-label="Putar narasi audio">
-                        Putar narasi
-                      </a>
-                    </Button>
-                  )}
                   <div className="max-h-64 overflow-y-auto rounded-sm border border-stone-200 bg-stone-50 p-6 dark:border-stone-800 dark:bg-stone-900">
                     <p className="text-base leading-relaxed text-stone-600 dark:text-stone-400">
                       {culture.transcript}
@@ -274,14 +296,18 @@ export default function CultureDetailPage({
                     Image attribution
                   </h3>
                   <p className="text-base leading-relaxed text-stone-600 dark:text-stone-400">
-                    <a
-                      href={culture.photoCreditUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="underline decoration-stone-300 underline-offset-4 transition-colors duration-500 ease-out hover:text-accent focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-2"
-                    >
-                      {culture.photoCredit}
-                    </a>
+                    {culture.photoCreditUrl ? (
+                      <a
+                        href={culture.photoCreditUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="underline decoration-stone-300 underline-offset-4 transition-colors duration-500 ease-out hover:text-accent focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-2"
+                      >
+                        {culture.photoCredit}
+                      </a>
+                    ) : (
+                      culture.photoCredit
+                    )}
                   </p>
                 </div>
               </div>

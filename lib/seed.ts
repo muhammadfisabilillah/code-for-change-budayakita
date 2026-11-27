@@ -153,7 +153,7 @@ export const seedCultures: Culture[] = [
     name: "Bharatanatyam",
     detail_desc:
       "One of India's oldest classical dance forms from Tamil Nadu, combining intricate footwork, expressive hand gestures (mudras), and facial storytelling (abhinaya).",
-    media_url: img("bharatanatyam"),
+    media_url: "/images/cultures/bharatanatyam.jpg",
     audio_narration_url: "",
     sign_language_gif_url: "",
   },
@@ -181,11 +181,19 @@ export const seedCultures: Culture[] = [
   },
 ];
 
+/** Alt text written for specific bundled photographs. */
+const CUSTOM_ALT_TEXT: Record<string, string> = {
+  "20000000-0000-4000-8000-000000000008":
+    "A Bharatanatyam dancer in a vivid red costume performing a raised-hand gesture and lifted-leg pose under warm stage lighting against a dark temple backdrop.",
+};
+
 export const seedAccessibility: AccessibilityMeta[] = seedCultures.map(
   (culture, index) => ({
     id: `30000000-0000-4000-8000-${String(index + 1).padStart(12, "0")}`,
     culture_id: culture.id,
-    alt_text: `${culture.name} — a cultural ${culture.type.toLowerCase()} tradition.`,
+    alt_text:
+      CUSTOM_ALT_TEXT[culture.id] ??
+      `${culture.name} — a cultural ${culture.type.toLowerCase()} tradition.`,
     transcript:
       index % 3 === 0
         ? `${culture.name}. ${culture.detail_desc} This description is provided as a text alternative for the accompanying media.`

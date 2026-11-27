@@ -10,76 +10,101 @@ import {
   type ReactNode,
 } from "react";
 
+export type Theme = "light" | "dark" | "high-contrast";
+
 interface AccessibilityContextValue {
-  /** Whether the Black/White/Soft-blue high-contrast palette is active. */
+  /** Current theme. */
+  theme: Theme;
+  /** Replace the current theme. */
+  setTheme: (theme: Theme) => void;
+  /** True when the Black/White/Soft-blue high-contrast palette is active. */
   highContrast: boolean;
-  /** Toggle the high-contrast palette on/off. */
+  /** Toggle high contrast on/off. */
   toggleHighContrast: () => void;
+  /** True when the class-based dark theme is active. */
+  darkMode: boolean;
+  /** Toggle dark mode on/off. */
+  toggleDarkMode: () => void;
   /** True when the user's OS requests reduced motion. */
   reducedMotion: boolean;
-  /** Whether the class-based dark theme is active. */
-  darkMode: boolean;
-  /** Toggle the dark theme on/off. */
-  toggleDarkMode: () => void;
 }
 
 const AccessibilityContext =
   createContext<AccessibilityContextValue | null>(null);
 
-const STORAGE_KEY = "budayakita:high-contrast";
-const THEME_KEY = "budayakita:theme";
+const THEME_KEY = "budayakita-theme";
+const LEGACY_THEME_KEY = "budayakita:theme";
+const LEGACY_CONTRAST_KEY = "budayakita:high-contrast";
+
+const THEMES: Theme[] = ["light", "dark", "high-contrast"];
+
+function isTheme(value: string | null): value is Theme {
+  return value !== null && (THEMES as string[]).includes(value);
+}
+
+/** Applies theme classes immediately, before React effects run. */
+function applyTheme(theme: Theme) {
+  const root = document.documentElement;
+  root.classList.remove("light", "dark", "high-contrast", "hc");
+  if (theme === "dark") {
+    root.classList.add("dark");
+  } else if (theme === "high-contrast") {
+    root.classList.add("high-contrast", "hc");
+  } else {
+    root.classList.add("light");
+  }
+}
+
+/** Reads the saved preference, including legacy keys from earlier builds. */
+function readInitialTheme(): Theme {
+  try {
+    const stored = window.localStorage.getItem(THEME_KEY);
+    if (isTheme(stored)) return stored;
+
+    const legacyContrast = window.localStorage.getItem(LEGACY_CONTRAST_KEY);
+    if (legacyContrast === "true") return "high-contrast";
+
+    const legacyTheme = window.localStorage.getItem(LEGACY_THEME_KEY);
+    if (legacyTheme === "dark" || legacyTheme === "light") return legacyTheme;
+
+    if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
+      return "dark";
+    }
+  } catch {
+    // Ignore storage / matchMedia access errors.
+  }
+  return "light";
+}
 
 export function AccessibilityProvider({ children }: { children: ReactNode }) {
-  const [highContrast, setHighContrast] = useState(false);
+  // SSR default stays "light" so server and client markup always match.
+  const [theme, setThemeState] = useState<Theme>("light");
   const [reducedMotion, setReducedMotion] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
-  // Hydrate persisted preference after mount (avoids SSR mismatch).
+  // Hydrate the saved preference once after mount.
   useEffect(() => {
-    try {
-      const stored = window.localStorage.getItem(STORAGE_KEY);
-      if (stored === "true") setHighContrast(true);
-    } catch {
-      // Ignore storage access errors (private mode, etc.)
-    }
+    const initial = readInitialTheme();
+    applyTheme(initial);
+    setThemeState(initial);
+    setMounted(true);
   }, []);
 
-  // Hydrate the theme preference after mount (the inline bootstrap script in
-  // the root layout applies the class before paint to avoid a flash).
+  // Persist and apply every subsequent change (skip the pre-hydration default).
   useEffect(() => {
+    if (!mounted) return;
+    applyTheme(theme);
     try {
-      const stored = window.localStorage.getItem(THEME_KEY);
-      if (stored === "dark" || stored === "light") {
-        setDarkMode(stored === "dark");
-      } else {
-        setDarkMode(
-          window.matchMedia("(prefers-color-scheme: dark)").matches,
-        );
-      }
-    } catch {
-      // Ignore storage / matchMedia access errors.
-    }
-  }, []);
-
-  // Keep the <html> class in sync so Tailwind `hc` variables apply globally.
-  useEffect(() => {
-    const root = document.documentElement;
-    root.classList.toggle("hc", highContrast);
-    try {
-      window.localStorage.setItem(STORAGE_KEY, String(highContrast));
+      window.localStorage.setItem(THEME_KEY, theme);
+      window.localStorage.removeItem(LEGACY_THEME_KEY);
+      window.localStorage.removeItem(LEGACY_CONTRAST_KEY);
     } catch {
       // Ignore storage access errors.
     }
-  }, [highContrast]);
-
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", darkMode);
-    try {
-      window.localStorage.setItem(THEME_KEY, darkMode ? "dark" : "light");
-    } catch {
-      // Ignore storage access errors.
-    }
-  }, [darkMode]);
+  }, [theme, mounted]);
 
   // Track the OS-level reduced-motion preference live.
   useEffect(() => {
@@ -93,25 +118,43 @@ export function AccessibilityProvider({ children }: { children: ReactNode }) {
     return () => query.removeEventListener("change", onChange);
   }, []);
 
-  const toggleHighContrast = useCallback(
-    () => setHighContrast((value) => !value),
+  const setTheme = useCallback((next: Theme) => setThemeState(next), []);
+
+  const toggleDarkMode = useCallback(
+    () => setThemeState((value) => (value === "dark" ? "light" : "dark")),
     [],
   );
 
-  const toggleDarkMode = useCallback(
-    () => setDarkMode((value) => !value),
+  const toggleHighContrast = useCallback(
+    () =>
+      setThemeState((value) =>
+        value === "high-contrast" ? "light" : "high-contrast",
+      ),
     [],
   );
+
+  const darkMode = theme === "dark";
+  const highContrast = theme === "high-contrast";
 
   const value = useMemo(
     () => ({
+      theme,
+      setTheme,
+      darkMode,
+      toggleDarkMode,
       highContrast,
       toggleHighContrast,
       reducedMotion,
+    }),
+    [
+      theme,
+      setTheme,
       darkMode,
       toggleDarkMode,
-    }),
-    [highContrast, toggleHighContrast, reducedMotion, darkMode, toggleDarkMode],
+      highContrast,
+      toggleHighContrast,
+      reducedMotion,
+    ],
   );
 
   return (

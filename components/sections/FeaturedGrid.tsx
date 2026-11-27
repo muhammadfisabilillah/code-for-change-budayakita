@@ -15,25 +15,29 @@ const featuredCultures: FeaturedCulture[] = [
     slug: "borobudur",
     category: "Indonesia • Architecture",
     title: "Candi Borobudur",
-    image:
-      "https://images.unsplash.com/photo-1596401057633-54c8c1b61397?q=80&w=800&auto=format&fit=crop",
-    alt: "The stepped stone tiers and stupas of Borobudur temple rising above a green landscape.",
+    image: "/images/cultures/borobudur.jpg",
+    alt: "A seated Buddha statue inside a perforated stone stupa at Borobudur, with bell-shaped stupas and visitors behind it under a bright sky.",
   },
   {
     slug: "kyoto-tea-ceremony",
     category: "Jepang • Tradition",
     title: "Upacara Teh Kyoto",
-    image:
-      "https://images.unsplash.com/photo-1528360983277-13d9b152c6d1?q=80&w=800&auto=format&fit=crop",
-    alt: "A quiet Kyoto tea room with a ceramic tea bowl and bamboo whisk arranged for a tea ceremony.",
+    image: "/images/cultures/upacara-teh-tokyo.jpg",
+    alt: "A person in an orange floral kimono preparing tea, reaching toward a black cast-iron kettle on a woven tray beside a bamboo whisk.",
   },
   {
     slug: "giza-pyramids",
     category: "Mesir • History",
     title: "Piramida Giza",
-    image:
-      "https://images.unsplash.com/photo-1539650116574-75c0c6d73e6e?q=80&w=800&auto=format&fit=crop",
-    alt: "The Great Pyramids of Giza rising above the desert sands under a clear sky.",
+    image: "/images/cultures/piramida-giza.jpg",
+    alt: "A camel resting on pale rocky sand in front of a great pyramid under a deep blue sky.",
+  },
+  {
+    slug: "bharatanatyam",
+    category: "India • Dance",
+    title: "Bharatanatyam",
+    image: "/images/cultures/bharatanatyam.jpg",
+    alt: "A Bharatanatyam dancer in a vivid red costume performing a raised-hand gesture and lifted-leg pose under warm stage lighting against a dark temple backdrop.",
   },
 ];
 

@@ -5,6 +5,7 @@ import { AccessibilityProvider } from "@/contexts/AccessibilityContext";
 import { MotionProvider } from "@/components/motion-provider";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { ThemeScript } from "@/components/ThemeScript";
 import { getCountries, getCultures } from "@/lib/data";
 
 const sans = Plus_Jakarta_Sans({
@@ -47,14 +48,10 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className={sans.variable} suppressHydrationWarning>
+      <head>
+        <ThemeScript />
+      </head>
       <body className="flex min-h-screen flex-col">
-        {/* Apply saved theme/contrast before paint to avoid a flash. */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html:
-              "try{var r=document.documentElement;var t=localStorage.getItem('budayakita:theme');var d=t?t==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;if(d)r.classList.add('dark');var h=localStorage.getItem('budayakita:high-contrast');if(h==='true')r.classList.add('hc')}catch(e){}",
-          }}
-        />
         <AccessibilityProvider>
           <MotionProvider>
             <a href="#main-content" className="skip-link">
