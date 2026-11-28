@@ -4,6 +4,7 @@ import * as React from "react";
 import { useRouter } from "next/navigation";
 import { CornerDownLeft, Globe2, Search, X } from "lucide-react";
 import { CultureTypeBadge } from "@/components/culture-type";
+import { cultureSlug } from "@/lib/culture-slugs";
 import { cn } from "@/lib/utils";
 import type { Country, CultureType, CultureWithMeta } from "@/lib/types";
 
@@ -92,7 +93,7 @@ export function NavbarSearch({ cultures, countries }: NavbarSearchProps) {
         id: culture.id,
         label: culture.name,
         detail: culture.country?.name ?? culture.type,
-        href: `/cultures/${culture.id}`,
+        href: `/culture/${cultureSlug(culture.name)}`,
         type: culture.type,
       }));
   }, [cultures, query]);

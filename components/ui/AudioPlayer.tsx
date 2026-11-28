@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 interface AudioPlayerProps {
   /** Text that will be read aloud. */
   text: string;
-  /** BCP-47 language tag for the utterance. */
+  /** BCP-47 language tag for the utterance. Defaults to US English. */
   lang?: string;
   /** Speech rate; 0.9 is slightly slower and easier to follow. */
   rate?: number;
@@ -17,7 +17,7 @@ interface AudioPlayerProps {
 /** Minimalist, keyboard-friendly text-to-speech control (Web Speech API). */
 export function AudioPlayer({
   text,
-  lang = "id-ID",
+  lang = "en-US",
   rate = 0.9,
   className,
 }: AudioPlayerProps) {

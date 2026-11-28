@@ -149,6 +149,195 @@ const cultureDetails: CultureDetail[] = [
     audioUrl: "",
     relatedSlugs: ["borobudur", "pendet-dance"],
   },
+  {
+    slug: "tari-saman",
+    category: "Indonesia • Dance",
+    title: "Tari Saman",
+    heroImage: "https://picsum.photos/seed/tari-saman/1200/800",
+    photoCredit: "Illustrative placeholder · BudayaKita Global",
+    photoCreditUrl: "",
+    intro:
+      "Baris yang diam menjadi badai. Dalam Tari Saman, sembilan orang bergerak seperti satu tubuh dari ribuan tangan.",
+    body: [
+      "Tari Saman, atau tari piring dari Aceh, adalah tarian sakral yang berasal dari masyarakat Gayo. Gaya ini dikenal dengan nama 'Dance of a Thousand Hands' karena penari yang duduk berderet bergerak serentak dengan presisi tinggi.",
+      "Irama dihasilkan dari tepukan tangan, pat pada dada, dan ayunan tubuh yang cepat namun tetap teratur. Musiknya dimulai pelan lalu menaikkan tempo menuju kemudian berakhir tiba-tiba.",
+      "Tari ini sering dipertunjukkan pada upacara besar dan mewakili semangat gotong royong. Latihan ketat dan penghafalan gerak membuatnya terasa seperti satu kehendak dari banyak tubuh.",
+    ],
+    altText:
+      "An illustrative photograph representing Tari Saman, a synchronized Indonesian kneeling dance with rapid clapping.",
+    transcript:
+      "Narasi: Baris penari Aceh duduk rapat bahu dengan bahu. Tangan naik bersama, bertepuk cepat, dan tubuh berayun seperti satu entitas. Tarian dimulai perlahan, membangun tegangan, hingga puncak yang mengejutkan sebelum berhenti.",
+    audioUrl: "",
+    relatedSlugs: ["borobudur", "rendang"],
+  },
+  {
+    slug: "rendang",
+    category: "Indonesia • Food",
+    title: "Rendang",
+    heroImage: "/images/cultures/rendang.jpg",
+    photoCredit: "Photo · BudayaKita Global collection",
+    photoCreditUrl: "",
+    intro:
+      "Bukan sekadar masakan, Rendang adalah proses. Beberapa jam dicampur bumbu, diamati, dan dikelola hingga menjadi resep yang kuat.",
+    body: [
+      "Rendang adalah hidangan Minangkabau dari Sumatera Barat. Daging sapi dimasak perlahan dalam santan kelapa dan pasta rempah kaya, seperti lengkuas, kunyit, ketumbar, dan cabai, hingga kering meresap.",
+      "Teknik ini bukan sekadar untuk rasa, tapi juga untuk daya simpan. Masakan dituang dalam panci dan diamati selama jam; kentalnya santan berubah jadi lapisan cokelat keemasan di sekeliling daging.",
+      "Rendang sering menjadi pusat acara keluarga. Di Minangkabau, ada ungkapan 'rendang adat', menunjukkan kesakralan dan keharusan keluarga membawa hidangan ini dalam momen penting.",
+    ],
+    altText:
+      "A close-up of dark, caramelized beef rendang coated in a rich spice paste on a white ceramic plate.",
+    transcript:
+      "Narasi: Daging sapi tua dimasak dengan santan kelapa dan pasta rempah selama berjam-jam. Panci diputar perlahan; santan menguap hingga tinggal lapisan cokelat keemasan. Keseimbangan gurih, manis, dan pedas adalah kunci rendang.",
+    audioUrl: "",
+    relatedSlugs: ["tari-saman", "borobudur"],
+  },
+  {
+    slug: "ikebana",
+    category: "Jepang • Art",
+    title: "Ikebana",
+    heroImage: "/images/cultures/ikebana.jpg",
+    photoCredit: "Photo · BudayaKita Global collection",
+    photoCreditUrl: "",
+    intro:
+      "Di ruang yang tenang, satu cabang bisa menjadi cerita. Ikebana mengajarkan seni berhenti.",
+    body: [
+      "Ikebana, atau kado (‘jalan bunga’), adalah seni menata bunga khas Jepang. Fokusnya bukan kepadatan bunga, tapi keseimbangan, asimetri, dan ruang kosong.",
+      "Tiap tangkai, daun, dan bunga diletakkan dengan maksud untuk mencerminkan bentuk dalam alam. Aliran seperti rikka, kyohi, dan ohara memiliki aturan berbeda, namun sama-sama menghargai minimalisme.",
+      "Hasilnya bukan hanya indah, tapi juga kontemplatif: praktisi dilatih melihat hubungan antara alam, ruang, dan manusia.",
+    ],
+    altText:
+      "A minimalist ikebana arrangement of slender branches in a tall glass vase, casting delicate shadows on a warm wall beneath a framed calligraphy panel.",
+    transcript:
+      "Narasi: Tangkai lurus bersanding dengan daun pendek di vasa tinggi. Ruang kosong sengaja ditinggalkan. Setiap perubahan kecil atau letak tangkai berubah karena estetika dan arti.",
+    audioUrl: "",
+    relatedSlugs: ["kyoto-tea-ceremony", "edomae-sushi"],
+  },
+  {
+    slug: "edomae-sushi",
+    category: "Jepang • Food",
+    title: "Edomae Sushi",
+    heroImage: "https://picsum.photos/seed/edomae-sushi/1200/800",
+    photoCredit: "Illustrative placeholder · BudayaKita Global",
+    photoCreditUrl: "",
+    intro:
+      "Di tepi Tokyo, sushi menjadi seni presisi. Berabad-abad, para chef menyempurnakan seimbangnya nasi dan laut.",
+    body: [
+      "Edomae, nama lama Tokyo, menandai sushi yang berkembang di teluk ini. Ikan laut dan seafood diawetkan atau dimasak perlahan supaya rasanya padat.",
+      "Nasi vinegar dibentuk manual, ditutup lembut, lalu diberi sedikit glaze soya. Portions kecil untuk dinikmati satu-satu, tanpa kesalahan rasa.",
+      "Filosofinya seasonal: bahan dipilih menurut musim, chef menghormati karakter ikan, dan hasilnya dihidangkan secepat mungkin.",
+    ],
+    altText:
+      "An illustrative photograph representing Edomae sushi nigiri on a ceramic plate.",
+    transcript:
+      "Narasi: Nasi vinegar hangat dibentuk manual dan ditutup ikan laut yang segar. Portions kecil. Semakin sederhana, semakin penting karakter ikan dan presisi chef.",
+    audioUrl: "",
+    relatedSlugs: ["kyoto-tea-ceremony", "ikebana"],
+  },
+  {
+    slug: "jarabe-tapatios",
+    category: "Meksiko • Dance",
+    title: "Jarabe Tapatío",
+    heroImage: "/images/cultures/jarabe-tapatios.jpg",
+    photoCredit: "Photo · BudayaKita Global collection",
+    photoCreditUrl: "",
+    intro:
+      "Berjalan melingkar, tersenyum, dan kaki tepuk. Jarabe Tapatío menggambarkan percintaan dengan tarian.",
+    body: [
+      "Jarabe Tapatío, sering disebut ‘Mexican Hat Dance’, adalah tarian nasional Meksiko. Pasangan laki-laki dan perempuan berputar berlawanan arah, kaki berlangkah presisi.",
+      "Awalnya tarian rakyat dari Jalisco. Kostum dan musiknya kini mewakili identitas mestizo Meksiko. Gerak kecil kaki mengikuti bantuan, lalu berhenti di irama.",
+      "Sombrero, kostum bordir, dan musik ritmis membuatnya dikenal seluruh dunia sebagai wajah budaya Meksiko.",
+    ],
+    altText:
+      "A Mexican rider in an embroidered navy dress and wide-brimmed sombrero sitting atop a tan horse against a soft blue sky.",
+    transcript:
+      "Narasi: Pasangan berputar melingkar. Kaki kanan tepuk perlahan. Kostum bordir bergerak halus. Tarian mengisahkan ketegangan dan kesopanan antara pasangan dengan langkah teratur.",
+    audioUrl: "",
+    relatedSlugs: ["mole-poblano", "borobudur"],
+  },
+  {
+    slug: "mole-poblano",
+    category: "Meksiko • Food",
+    title: "Mole Poblano",
+    heroImage: "https://picsum.photos/seed/mole-poblano/1200/800",
+    photoCredit: "Illustrative placeholder · BudayaKita Global",
+    photoCreditUrl: "",
+    intro:
+      "Rasa kompleks dari Puebla: cabai, rempah, kacang, dan sedikit cokelat menjadi satu.",
+    body: [
+      "Mole Poblano adalah saus legendaris dari Puebla. Bahan dasarnya cabai, rempah, kacang, biji, dan kadang cokelat.",
+      "Prosesnya panjang: tiap bahan dipanggang atau digoreng, dikupas, dikayakan, dan dikocok sampai halus. Rasa manis, pedas, dan asin berlapis.",
+      "Mole sering disajikan pada tuna, turkey, atau ayam untuk acara keluarga dan hari besar.",
+    ],
+    altText:
+      "An illustrative photograph representing Mole Poblano sauce served over chicken.",
+    transcript:
+      "Narasi: Cabai, rempah, kacang, dan cokelat dipadu menjadi saus halus. Pedas berlapis dengan manis dan asin. Hidangan dikenal dari Puebla.",
+    audioUrl: "",
+    relatedSlugs: ["jarabe-tapatios", "borobudur"],
+  },
+  {
+    slug: "opera-buffa",
+    category: "Italia • Art",
+    title: "Opera Buffa",
+    heroImage: "https://picsum.photos/seed/opera-buffa/1200/800",
+    photoCredit: "Illustrative placeholder · BudayaKita Global",
+    photoCreditUrl: "",
+    intro:
+      "Komedi dalam musik. Opera buffa menampilkan kehidupan sederhana lewat dialog cepat dan akhir yang berlebihan.",
+    body: [
+      "Opera buffa, atau ‘comic opera’, berkembang di Italia abad 18. Berbeda dari opera seria, ia memakai tokoh sehari-hari, cerita ringan, dan patter cepat.",
+      "Musiknya sering menyelimuti aria dan ensemble. Komedi lahir dari kesalahpahaman, kekeliruan, dan hubungan keluarga.",
+      "Gaya ini memengaruhi banyak karya kemudian hingga modern opera-comique.",
+    ],
+    altText:
+      "An illustrative photograph representing an opera buffa stage scene.",
+    transcript:
+      "Narasi: Opera buffa mencampur kehidupan biasa dengan musik. Tokoh palsu dan patter cepat membuat komedi musikal.",
+    audioUrl: "",
+    relatedSlugs: ["borobudur", "ikebana"],
+  },
+  {
+    slug: "adire-textile",
+    category: "Nigeria • Art",
+    title: "Adire Textile",
+    heroImage: "/images/cultures/adire-textile.jpg",
+    photoCredit: "Photo · BudayaKita Global collection",
+    photoCreditUrl: "",
+    intro:
+      "Kain yang ditarik, dicelup, dan berbisik. Adire menahan warna supaya pola lahir.",
+    body: [
+      "Adire adalah teknik resist-dyeing dari masyarakat Yoruba di Nigeria. Kain diikat, disumbat, atau digambar dengan pasta singkong sebelum dicelup indigo.",
+      "Setelah warna dibuka, hasilnya pola biru-putih yang rumit. Pola tiap kelompok memiliki nama dan makna tertentu.",
+      "Adire berkembang sebagai karya seni tekstil dan juga benda sosial. Tiap helai adalah kombinasi kesabaran, teknik, dan keindahan.",
+    ],
+    altText:
+      "A woman wearing a warm orange and cream patterned Adire textile with a sheer white lace headwrap, smiling outdoors in soft daylight.",
+    transcript:
+      "Narasi: Kain putih digores sebelum dicelup indigo. Bagian yang dijaga tidak berwarna. Pola muncul hingga menjadi tekstil halus.",
+    audioUrl: "",
+    relatedSlugs: ["yoruba", "borobudur"],
+  },
+  {
+    slug: "yoruba",
+    category: "Nigeria • Language",
+    title: "Yoruba",
+    heroImage: "/images/cultures/yoruba.jpg",
+    photoCredit: "Photo · BudayaKita Global collection",
+    photoCreditUrl: "",
+    intro:
+      "Bahasa yang membedakan makna dengan nada. Yoruba membawa sastra lisan, proverb, dan sejarah.",
+    body: [
+      "Yoruba adalah bahasa di Nigeria dengan penutur lebih dari 40 juta. Bahasa ini berbasis tonal: pitch mengubah makna kata.",
+      "Sastra lisan kaya: proverb, puisi, dan cerita tradisional. Proverb membawa moral dan sejarah.",
+      "Yoruba juga diajarkan di sekolah dan digunakan dalam media, seni, dan kehidupan sehari-hari.",
+    ],
+    altText:
+      "A group of people in teal striped traditional Yoruba attire with matching fila caps and coral bead necklaces gathered at an outdoor celebration.",
+    transcript:
+      "Narasi: Bahasa Yoruba memakai intonasi untuk makna. Proverb dan puisi disampaikan lisan. Penutur bertemu dalam upacara budaya.",
+    audioUrl: "",
+    relatedSlugs: ["adire-textile", "borobudur"],
+  },
 ];
 
 function findCulture(slug: string) {
@@ -264,7 +453,7 @@ export default function CultureDetailPage({
                 </p>
                 <AudioPlayer
                   text={culture.transcript}
-                  lang="id-ID"
+                  lang="en-US"
                   rate={0.9}
                 />
               </div>

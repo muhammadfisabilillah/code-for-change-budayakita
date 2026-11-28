@@ -6,6 +6,7 @@ import { ChevronLeft, ChevronRight, Globe2 } from "lucide-react";
 import { CultureCard } from "@/components/ui/CultureCard";
 import { CultureTypeBadge } from "@/components/culture-type";
 import { getCountryById, getCulturesByCountry } from "@/lib/data";
+import { cultureSlug } from "@/lib/culture-slugs";
 import type { CultureType } from "@/lib/types";
 
 interface PageProps {
@@ -164,7 +165,7 @@ export default async function CountryDetailPage({ params }: PageProps) {
                     `${culture.name} — ${culture.type} from ${country.name}.`
                   }
                   description={culture.detail_desc}
-                  href={`/cultures/${culture.id}`}
+                  href={`/culture/${cultureSlug(culture.name)}`}
                 />
               </li>
             ))}

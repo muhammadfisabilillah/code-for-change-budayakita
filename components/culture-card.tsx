@@ -12,6 +12,7 @@ import {
   CardHeader,
 } from "@/components/ui/card";
 import { CultureTypeBadge } from "@/components/culture-type";
+import { cultureSlug } from "@/lib/culture-slugs";
 import type { CultureWithMeta } from "@/lib/types";
 
 export function CultureCard({ culture }: { culture: CultureWithMeta }) {
@@ -66,7 +67,7 @@ export function CultureCard({ culture }: { culture: CultureWithMeta }) {
           </div>
           <h3 className="text-lg font-semibold leading-tight tracking-tight">
             <Link
-              href={`/cultures/${culture.id}`}
+              href={`/culture/${cultureSlug(culture.name)}`}
               className="rounded underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               {culture.name}
@@ -82,7 +83,7 @@ export function CultureCard({ culture }: { culture: CultureWithMeta }) {
 
         <CardFooter>
           <Link
-            href={`/cultures/${culture.id}`}
+            href={`/culture/${cultureSlug(culture.name)}`}
             className="inline-flex items-center gap-1.5 rounded-md text-sm font-medium text-primary underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             Explore
