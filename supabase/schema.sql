@@ -44,6 +44,10 @@ create table if not exists public.cultures (
 create index if not exists cultures_country_id_idx on public.cultures (country_id);
 create index if not exists cultures_type_idx on public.cultures (type);
 
+-- Natural keys used by the idempotent seeder.
+create unique index if not exists cultures_country_name_key
+  on public.cultures (country_id, name);
+
 -- ---------------------------------------------------------------------------
 -- 3. accessibility_meta
 -- ---------------------------------------------------------------------------
@@ -57,6 +61,9 @@ create table if not exists public.accessibility_meta (
 );
 
 create index if not exists accessibility_meta_culture_id_idx
+  on public.accessibility_meta (culture_id);
+
+create unique index if not exists accessibility_meta_culture_id_key
   on public.accessibility_meta (culture_id);
 
 -- ---------------------------------------------------------------------------

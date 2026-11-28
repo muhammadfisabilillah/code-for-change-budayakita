@@ -8,9 +8,11 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "seed": "tsx scripts/seed.ts"
+    "seed": "tsx scripts/seed-neon.ts",
+    "seed:supabase": "tsx scripts/seed.ts"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^1.2.2",
     "@radix-ui/react-slot": "^1.1.1",
     "@supabase/supabase-js": "^2.47.10",
     "clsx": "^2.1.1",
